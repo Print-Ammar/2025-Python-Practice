@@ -4,7 +4,7 @@ input_values = [1,2,3,4,5]
 squares = [1,4,9,16,25]
 
 fig, ax = plt.subplots()
-plt.style.use('seaborn')
+
 ax.plot(input_values, squares, linewidth=3)
 # Set chart title and label axes.
 ax.set_title("Square Numbers", fontsize=24)
