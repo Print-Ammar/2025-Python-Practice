@@ -6,7 +6,8 @@ while True:
     rw.fill_walk()
 
     fig, ax = plt.subplots()
-    ax.scatter(rw.x_values,rw.y_values, s = 15)
+    point_numbers = range(rw.num_points)
+    ax.scatter(rw.x_values,rw.y_values, s = 15, c=point_numbers, cmap=plt.cm.Reds, edgecolors='none')
     plt.show()
 
 
