@@ -23,8 +23,9 @@ with open(filename) as f:
             lows.append(low)
         
 fig, ax = plt.subplots()
-ax.plot(dates, highs, c='blue ')
-ax.plot(dates,lows,c='red')
+ax.plot(dates, highs, c='blue', alpha =0.5)
+ax.plot(dates,lows,c='red', alpha = 0.5)
+plt.fill_between(dates,highs,lows, facecolor ='blue', alpha = 0.1)
 plt.xlabel('Date', fontsize=16)
 plt.ylabel('Temperature (F)', fontsize=16)
 plt.title("Daily high and low temperatures - 2021", fontsize=24)
