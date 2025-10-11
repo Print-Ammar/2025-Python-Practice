@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 first_date = datetime.strptime('2021-07-01', '%Y-%m-%d')
 print(first_date)
 
-filename = r"C:\Users\ammar\programs\2025-Python-Practice\PythonCrashCourse\chapter_16\sitka_weather_07-2021_simple.csv"
+filename = r"2025-Python-Practice\PythonCrashCourse\chapter_16\sitka_weather_07-2021_simple.csv"
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
