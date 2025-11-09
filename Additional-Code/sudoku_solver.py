@@ -11,28 +11,38 @@ board = [
 ]
 
 def print_board(board):
-    for row in range(len(board)):
-        if row % 3 == 0 and row != 0:
+    for row_index in range(len(board)):
+        if row_index % 3 == 0 and row_index != 0:
             print("- - - - - - - - -")
-        for column in range(len(board[row])):
-            if column % 3 == 0 and column != 0:
+        for column_index in range(len(board[row_index])):
+            if column_index % 3 == 0 and column_index != 0:
                     print(" | ", end = '')
 
-            if column == 8:
-                 print(board[row][column])
+            if column_index == 8:
+                 print(board[row_index][column_index])
             else:
-                 print(board[row][column],end='')
+                 print(board[row_index][column_index],end='')
 
 def count_empty_spaces(board):
     zeros = 0
     numbers = 0
-    for row in range(len(board)):
-          for column in range(len(board[row])):
+    for row_index in range(len(board)):
+          for column_index in range(len(board[row_index])):
                numbers += 1
-               if board[row][column] == 0:
+               if board[row_index][column_index] == 0:
                     zeros += 1
     print(zeros,numbers)
-               
+
+# Attempt 1
+
+def indexing_empty_spaces(board):
+    empty_positions = []
+    for row_index in range(len(board)):
+          for column_index in range(len(board[row_index])):
+               if board[row_index][column_index] == 0:
+                    empty_positions.append([column_index,row_index])
+    print(empty_positions)
 
 print_board(board)
 count_empty_spaces(board)
+indexing_empty_spaces(board)
