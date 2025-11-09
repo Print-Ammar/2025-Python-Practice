@@ -14,13 +14,25 @@ def print_board(board):
     for row in range(len(board)):
         if row % 3 == 0 and row != 0:
             print("- - - - - - - - -")
-        for column in range(len(board)):
+        for column in range(len(board[row])):
             if column % 3 == 0 and column != 0:
                     print(" | ", end = '')
 
             if column == 8:
                  print(board[row][column])
             else:
-                 print(board[column][row],end='')
+                 print(board[row][column],end='')
+
+def count_empty_spaces(board):
+    zeros = 0
+    numbers = 0
+    for row in range(len(board)):
+          for column in range(len(board[row])):
+               numbers += 1
+               if board[row][column] == 0:
+                    zeros += 1
+    print(zeros,numbers)
+               
 
 print_board(board)
+count_empty_spaces(board)
