@@ -41,7 +41,16 @@ def indexing_empty_spaces(board):
           for column_index in range(len(board[row_index])):
                if board[row_index][column_index] == 0:
                     empty_positions.append([column_index,row_index])
+                    return (column_index, row_index)
     print(empty_positions)
+
+def is_current_board_valid(board, num, pos):
+     
+     # check row
+
+     for row_index in range(len(board[0])):
+          if board[pos[0]][row_index] and pos [1] != row_index:
+               return False
 
 print_board(board)
 count_empty_spaces(board)
